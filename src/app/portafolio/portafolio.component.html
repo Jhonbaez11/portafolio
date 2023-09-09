@@ -1,0 +1,29 @@
+<div class="container" data-aos="fade-up">
+
+    <div class="section-title" *ngFor="let descrip of descripcion | async">
+      <h2 >Portafolio</h2>          
+      <p>{{ descrip.portafolio }}</p>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-6" *ngFor="let port of portafolio | async">
+          <div class="portfolio-wrap">
+            <img [src]="'assets/img/portfolio/' + port.imagen" class="img-fluid" alt="">                
+            <div class="portfolio-info">
+              <h4>{{ port.nombre }}</h4>
+              <p>{{ port.tecnologias }}</p>
+              <div class="portfolio-links">
+                <!-- <a href="javascript:void(0)" (click)="abrirModal(port.video)" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a> -->
+                <a [href]="'assets/video/portafolio/' + port.video" target="_blank" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="fa-solid fa-video"></i></a>
+                &nbsp;&nbsp;
+                <a [href]="port.url_github" target="_blank" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <br><br>
+        </div>            
+      </div>
+    </div>
+    
+</div>
