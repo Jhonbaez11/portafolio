@@ -1,51 +1,56 @@
 <div class="container" data-aos="fade-up">
-    <div class="section-title">
-      <h2>Habilidades</h2>
-      <p>Ingeniero de sistemas con experiencia en desarrollo backend y frontend. Lenguajes: Java, C#, Python, PHP, Node.js, HTML5, CSS3, JavaScript. Frameworks: Spring Boot, Laravel, Angular. Bases de datos: SQL Server, MySQL, MongoDB. Aprendizaje rápido y resolución de problemas. Comprometido, responsable y trabajo en equipo.</p>
+  <div class="section-title">
+    <h2>Habilidades</h2>
+    <div *ngFor="let descr of descripccion | async">
+      <p>{{descr.habilidades}}</p>
+    </div>
+  </div>
+  <br>
+  <div class="row skills-content">
+    <div class="col-lg-8">
+      <h4>Core Stack</h4>
+      <div class="progress" *ngFor="let core of core | async">
+        <span class="skill">{{core.nombre}}<i class="val">{{core.valor}}%</i>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" [style.width]="core.valor + '%'" aria-valuenow="100"
+              aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </span>
+
+      </div>
     </div>
 
-    <div class="row skills-content">
-
-      <div class="col-lg-3">
-        <h4>Frontend</h4>
-        <div class="progress" *ngFor="let front of frontend | async">              
-          <span class="skill">{{front.nombre}}<i class="val">{{front.valor}}%</i></span>
-          <div class="progress-bar-wrap">
-            <div class="progress-bar" role="progressbar" [style.width]="front.valor + '%'" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
+    <div class="col-lg-4">
+      <h4 class="mb-4">Herramientas & Ecosistema</h4>
+      <div class="herramientas-container">
+        <span class="pill" *ngFor="let tool of tools | async">
+          {{tool.nombre}}
+        </span>
       </div>
-
-      <div class="col-lg-3">
-        <h4>Backend</h4>
-        <div class="progress" *ngFor="let back of backend| async">
-          <span class="skill">{{back.nombre}}<i class="val">{{back.valor}}%</i></span>
-          <div class="progress-bar-wrap">
-            <div class="progress-bar" role="progressbar" [style.width]="back.valor + '%'" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3">
-        <h4>Frameworks</h4>
-        <div class="progress" *ngFor="let frame of framework | async">              
-          <span class="skill">{{frame.nombre}}<i class="val">{{frame.valor}}%</i></span>
-          <div class="progress-bar-wrap">
-            <div class="progress-bar" role="progressbar" [style.width]="frame.valor + '%'" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3">
-        <h4>Bases de Datos</h4>
-        <div class="progress" *ngFor="let db of database| async">
-          <span class="skill">{{db.nombre}}<i class="val">{{db.valor}}%</i></span>
-          <div class="progress-bar-wrap">
-            <div class="progress-bar" role="progressbar" [style.width]="db.valor + '%'" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-      </div>
-
     </div>
+
+    <!-- <div class="col-lg-3">
+      <h4>Frameworks</h4>
+      <div class="progress" *ngFor="let frame of framework | async">
+        <span class="skill">{{frame.nombre}}<i class="val">{{frame.valor}}%</i></span>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" role="progressbar" [style.width]="frame.valor + '%'" aria-valuenow="100"
+            aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <h4>Bases de Datos</h4>
+      <div class="progress" *ngFor="let db of database| async">
+        <span class="skill">{{db.nombre}}<i class="val">{{db.valor}}%</i></span>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" role="progressbar" [style.width]="db.valor + '%'" aria-valuenow="100"
+            aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div> -->
 
   </div>
+
+</div>

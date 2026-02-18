@@ -1,0 +1,41 @@
+/* Contenedor flexible para que las etiquetas se acomoden solas */
+.herramientas-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que las cápsulas pasen a la siguiente línea */
+    gap: 12px;
+    /* Espacio entre cápsulas */
+    padding-top: 10px;
+}
+
+/* Estilo de la Cápsula (Pill) */
+.pill {
+    background-color: #ffffff;
+    /* Fondo blanco */
+    border: 1.5px solid #0056b3;
+    /* Borde azul igual al de tus barras actuales */
+    color: #0056b3;
+    /* Texto azul */
+    padding: 8px 18px;
+    /* Espacio interno */
+    border-radius: 50px;
+    /* Hace que sea totalmente redondeado */
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    /* Animación suave al pasar el mouse */
+    cursor: default;
+    display: inline-block;
+}
+
+/* Efecto al pasar el mouse */
+.pill:hover {
+    background-color: #0056b3;
+    /* Se llena de azul */
+    color: #ffffff;
+    /* Texto cambia a blanco */
+    transform: translateY(-3px);
+    /* Pequeño salto hacia arriba */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra elegante */
+}

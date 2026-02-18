@@ -13,12 +13,18 @@ export class HabilidadesComponent {
   backend: Observable<any[]>;
   framework: Observable<any[]>;
   database: Observable<any[]>;
+  descripccion: Observable<any[]>;
+  core: Observable<any[]>;
+  tools: Observable<any[]>;
 
   constructor(private firestore: AngularFirestore) {
     this.frontend = firestore.collection('habilidades_front').valueChanges();
     this.backend = firestore.collection('habilidades_back').valueChanges();
     this.framework = firestore.collection('habilidades_frame').valueChanges();
     this.database = firestore.collection('habilidades_db').valueChanges();
+    this.descripccion = firestore.collection('inicio').valueChanges();
+    this.core = firestore.collection('core_stack').valueChanges();
+    this.tools = firestore.collection('tools').valueChanges();
   }
 
 }

@@ -1,35 +1,35 @@
 <div class="container" data-aos="fade-up">
 
-    <div class="section-title">
-      <h2>Formación</h2>
-      <p></p>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-6">
-        <h3 class="resume-title">Educación</h3>
-        <div class="resume-item" *ngFor="let edu of educacion| async">
-          <h4>{{edu.titulo}}</h4>
-          <h5>{{edu.periodo}}</h5>
-          <p><em>{{edu.institucion}}, {{edu.ciudad}}, {{edu.pais}}</em></p>
-          <p></p>
-        </div>
-      </div>
-
-      <div class="col-lg-6">
-        <h3 class="resume-title">Experiencia Laboral</h3>
-        <div class="resume-item" *ngFor="let lab of laboral| async">
-          <h4>{{lab.cargo}}</h4>
-          <h5>{{lab.periodo}}</h5>
-          <p><em>{{lab.empresa}}, {{lab.ciudad}}, {{lab.pais}}</em></p>
-          <ul>
-            <li *ngIf="lab.funcion1.length > 0">{{lab.funcion1}}</li>
-            <li *ngIf="lab.funcion2.length > 0">{{lab.funcion2}}</li>
-            <li *ngIf="lab.funcion3.length > 0">{{lab.funcion3}}</li>
-            <li *ngIf="lab.funcion4.length > 0">{{lab.funcion4}}</li>
-          </ul>
-        </div>      
-      </div>
-    </div>
-
+  <div class="section-title">
+    <h2>Formación</h2>
+    <p></p>
   </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <h3 class="resume-title">Educación</h3>
+      <div class="resume-item" *ngFor="let edu of educacion| async">
+        <h4>{{edu.titulo}}</h4>
+        <h5>{{edu.periodo}}</h5>
+        <p><em>{{edu.institucion}}, {{edu.ciudad}}, {{edu.pais}}</em></p>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <h3 class="resume-title">Experiencia Laboral</h3>
+      <div class="resume-item" *ngFor="let lab of laboral| async">
+        <h4>{{lab.cargo}}</h4>
+        <h5>{{lab.periodo}}</h5>
+        <p><em>{{lab.empresa}}, {{lab.ciudad}}, {{lab.pais}}</em></p>
+        <ul>
+          <li *ngIf="lab.funcion1.length > 0">{{lab.funcion1}}</li>
+          <li *ngIf="lab.funcion2.length > 0">{{lab.funcion2}}</li>
+          <li *ngIf="lab.funcion3.length > 0">{{lab.funcion3}}</li>
+          <li *ngIf="lab.funcion4.length > 0">{{lab.funcion4}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
